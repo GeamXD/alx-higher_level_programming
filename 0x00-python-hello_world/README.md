@@ -9,3 +9,5 @@
 -> Your code should use the pycodestyle (version 2.8.*)
 -> All your files must be executable
 -> The length of your files will be tested using wc
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle
