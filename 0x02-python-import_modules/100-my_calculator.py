@@ -1,19 +1,26 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
     from calculator_1 import div, mul, sub, add
-    import sys
-
-    if len(sys.argv) - 1 != 3:
+    from sys import argv
+    operator = ["+", "-", "/", "*"]
+    count = len(argv) - 1
+    if count != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
-
-    operator = {"+": add, "-": sub, "/": div, "*": mul}
-
-    if sys.argv[2] not in list(operator.keys()):
+        exit(1)
+    sign = argv[2]
+    if sign not in operator:
         print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
-
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, operator[sys.argv[2]](a, b)))
+        exit(1)
+    a = int(argv[1])
+    b = int(argv[3])
+    res = 0
+    if sign in operator:
+        if sign == "+":
+            res = add(a, b)
+        elif sign == "*":
+            res = mul(a, b)
+        elif sign == "-":
+            res = sub(a, b)
+        else:
+            res = div(a, b)
+    print("{} {} {} = {}".format(a, sign, b, res))
