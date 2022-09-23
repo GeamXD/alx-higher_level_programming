@@ -15,15 +15,13 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    res = 0
     if sign in operator3:
         if sign == "+":
-            res = add(a, b)
+            print("{} {} {} = {}".format(a, sign, b, add(a, b)))
         else:
-            res = mul(a, b)
+            print("{} {} {} = {}".format(a, sign, b, mul(a, b)))
     if sign in operator2:
         if sign == "-":
-            res = sub(a, b)
+            print("{} {} {} = {}".format(a, sign, b, sub(a, b)))
         else:
-            res = div(a, b)
-    print("{} {} {} = {}".format(a, sign, b, res))
+            print("{} {} {} = {}".format(a, sign, b, div(a, b)))
